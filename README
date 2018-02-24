@@ -23,3 +23,7 @@ ConfigurableListableBeanFactory instead, seemed to work.
 To run this:
 
 ./mvnw spring-boot:run
+
+Somewhere in the output, this line should appear:
+
+Book: Book [title=Craig Walls, author=Spring in Action]
