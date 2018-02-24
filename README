@@ -1,3 +1,25 @@
+Creating a bean after application initialization and inserting it into
+the context so that it becomes a Spring-managed bean.
+
+https://docs.spring.io/spring/docs/4.3.14.RELEASE/spring-framework-reference/htmlsingle/#beans-definition
+
+    In addition to bean definitions that contain information on how to
+    create a specific bean, the ApplicationContext implementations also
+    permit the registration of existing objects that are created outside
+    the container, by users. This is done by accessing the
+    ApplicationContext’s BeanFactory via the method getBeanFactory()
+    which returns the BeanFactory implementation
+    DefaultListableBeanFactory. DefaultListableBeanFactory supports this
+    registration through the methods registerSingleton(..) and
+    registerBeanDefinition(..).
+
+(1) ApplicationContext doesn't have a .getBeanFactory() method.  I used
+AbstractApplicationContext instead.
+
+(2) getBeanFactory() doesn't return a DefaultListableBeanFactory, it
+returns a ConfigurableListableBeanFactory.  I used
+ConfigurableListableBeanFactory instead, seemed to work.
+
 To run this:
 
 ./mvnw spring-boot:run
